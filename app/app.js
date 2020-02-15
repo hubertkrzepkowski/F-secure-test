@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
-const PORT = 8080;
-const HOST = '0.0.0.0';
+const port = process.env.PORT;
+const host = '0.0.0.0';
 
 var jsonParser = bodyParser.json()
 
@@ -25,5 +25,5 @@ app.use((err, req, res, next) => {
     
 });
 
-app.listen(PORT, HOST);
-console.log("Running on http://" + HOST + ":" + PORT);
+app.listen(port, host);
+console.log("Running on http://" + host + ":" + port);
