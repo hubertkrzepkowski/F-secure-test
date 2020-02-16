@@ -17,15 +17,15 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
     if (err) {
         console.error("error connecting: " + err.stack);
-        return process.exit(5);
+        return process.exit(3);
     }
-    console.log("connected as id " + connection.threadId);
+    console.log("connected to DB");
 });
 
 app.get('/list', function (req, res) {
-    var abilityQuery = 'select id, name from company';
+    var Query = 'select id, name from company';
 
-    connection.query(abilityQuery, function (error, results, fields) {
+    connection.query(Query, function (error, results, fields) {
         if (error) throw error;
         console.log(results);
         res.send(results);
@@ -34,12 +34,15 @@ app.get('/list', function (req, res) {
 
 app.get('/random', (req, res) => {
     var random = Math.floor(Math.random() * (100 - 0) + 0);
-    res.statusMessage = "ok";
     res.json({ status: "ok", number: random.toString() });
 });
 
 app.post('/echo', jsonParser, (req, res) => {
 
+    var Query = "INSERT INTO company(name) VALUES('F-secure')";
+    connection.query(Query, function (error) {
+        if (error) throw error;
+    });
     res.json({ status: "ok", msg: req.body });
 });
 
@@ -52,4 +55,4 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, host);
-console.log("Running on http://" + host + ":" + port);
+console.log("(inside container)Running on http://" + host + ":" + port);
