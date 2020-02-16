@@ -2,6 +2,7 @@ To start :
        in F-secure-test directory  run script: "run.sh" 
     or 
        in F-secure-test directory  run commands :
+       
             docker-compose build
             docker-compose up -d
 
