@@ -1,4 +1,4 @@
-To start :
+To start 
        in F-secure-test directory  run script: "run.sh" 
     or 
        in F-secure-test directory  run commands :
