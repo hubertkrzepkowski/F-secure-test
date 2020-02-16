@@ -1,2 +1,8 @@
 #!/bin/sh
-sudo docker-compose up 
+if [ ! "$(docker ps -q -f name=webapp)" ]
+then
+     docker-compose build
+     docker-compose up -d
+else
+     docker-compose restart  
+fi 

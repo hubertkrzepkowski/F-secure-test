@@ -2,6 +2,7 @@ version: "3.7"
 services:
     db:
         image: mysql:5.7
+        container_name: db
         environment:
           MYSQL_ROOT_PASSWORD: 12345
           MYSQL_DATABASE: fsec
@@ -12,6 +13,7 @@ services:
                - ./bin/:/docker-entrypoint-initdb.d  
     webapp:
         build: .
+        container_name: webapp
         environment:
           PORT: 8000
           DATABASE_HOST: db
