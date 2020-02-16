@@ -6,7 +6,7 @@ To start :
             docker-compose build
             docker-compose up -d
 
-To test endpoints on default port(8080) (change port in docker-compose.yaml line 25) :
+To test endpoints on default port(8080) (change port in docker-compose.yaml line 25)
         use commands :
         
             curl --request GET \
