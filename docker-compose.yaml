@@ -1,8 +1,26 @@
 version: "3.7"
 services:
-  webapp:
-    build: .
-    environment:
-        - PORT=8000
-    ports:
-        - "8080:8000"
+    db:
+        image: mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: 12345
+          MYSQL_DATABASE: fsec
+          MYSQL_USER: user
+          MYSQL_PASSWORD: 12345 
+          DATABASE_HOST: db
+        volumes:
+               - ./bin/:/docker-entrypoint-initdb.d  
+    webapp:
+        build: .
+        environment:
+          PORT: 8000
+          DATABASE_HOST: db
+          MYSQL_PORT: 3306
+          MYSQL_DATABASE: fsec
+          MYSQL_USER: user
+          MYSQL_PASSWORD: 12345
+        ports:
+            - "8080:8000"
+        depends_on:
+        - db
+        restart: on-failure     
