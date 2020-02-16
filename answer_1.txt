@@ -1,0 +1,3 @@
+The best way I know about storing and accessing credential is using tools as Vault by HashiCorp 
+or services from cloud vendors like Azure Key Vault or AWS Secrets Manager.
+That solution allows to store encrypted secrets and access them in a secure manner.

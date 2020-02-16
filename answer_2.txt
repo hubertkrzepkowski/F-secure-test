@@ -1,0 +1,3 @@
+To deploy containers to AWS we can use AWS Fargate or AWS EC2. 
+To store credentials, we can use the AWS Secrets Manager. 
+Credentials can be injected to container as an Environment Variable.
