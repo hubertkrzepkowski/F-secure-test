@@ -1,9 +1,11 @@
 To start 
-       clone repository and in "F-secure-test" directory  run(with superuser privileges) script: "run.sh" 
-    or 
-	   run(with superuser privileges) script bellow in directory where you want to clone repository and run solution
+   clone repository and in "F-secure-test" directory  run(with superuser privileges) script: "run.sh" 
+   
+   or
+    
+   run(with superuser privileges) script bellow in directory where you want to clone repository and run solution.
 	   
-	    #!/bin/sh
+	        #!/bin/sh
 		apt-get update -y
 		apt-get upgrade -y 
 		apt-get install curl -y
