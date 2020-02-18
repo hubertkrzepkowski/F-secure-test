@@ -3,7 +3,7 @@ apt update
 apt upgrade
 apt install curl
 apt install git
-if [ !-x "$(command -v docker)" ]; then
+if [ ! -x "$(command -v docker)" ]; then
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 fi
