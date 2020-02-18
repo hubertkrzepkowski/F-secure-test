@@ -1,6 +1,6 @@
 #!/bin/sh
-apt update
-apt upgrade
+apt update -y
+apt upgrade -y
 apt install curl
 apt install git
 if [ ! -x "$(command -v docker)" ]; then
