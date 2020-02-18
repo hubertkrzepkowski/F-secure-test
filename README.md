@@ -28,7 +28,7 @@ To start
 			 docker-compose restart  
 		fi 
 
-       
+To restart solution in "F-secure-test" directory run(with superuser privileges) script: "run.sh".       
 
 To test endpoints on default port(8080) (change port in docker-compose.yaml line 25)
         use commands :
